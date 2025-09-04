@@ -1,0 +1,126 @@
+body{
+	background-color: black;
+	color:white;
+	font-family:Arial, sans-serif;
+}
+.stage{
+	width:300px;
+	height:400px;
+	background-color:#222;
+	margin:40px auto;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:#aaa;
+}
+.candle{
+	width: 40px;
+	height:150px;
+	background:linear-gradient(to bottom,#fffbe7 0%, #f8f1c6 100%);
+	border-radius:6px;
+	position :relative;
+	box-shadow: 0 0 15px rgba(255, 200, 150, 0.4);
+}
+.wick{
+	width: 4px;
+	height: 15px;
+	background: black;
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 2px;
+}
+
+
+.flame{
+	width:20px;
+	height:30px;
+	background:radial-gradient(ellipse at center,yellow 0%, orange 70%,transparent 100%);
+	border-radius: 50% 50% 50% 50%;
+	position: absolute;
+	top: -30px;
+	left:50%;
+	margin: 0 auto;
+	transform: translateX(-50%);
+	animation: flicker 0.15s infinite alternate, dance 1s infinite ease-in-out
+				flameGlow 2s infinite ease-in-out;
+	box-shadow: 0 0 30px 10px rgba(255, 200, 50, 0.7);
+}
+@keyframes flicker {
+	from {
+	transform: scale(1) rotate(-2deg);
+	opacity:0.9;
+		
+	}
+	to{
+		transform:scale (1.1) rotate(2deg);
+		opacity:1;
+	}
+}
+
+.inner-flame{
+	width:9px;
+	height:15px;
+	border-radius: 50% 50% 50% 50%;
+	background: radial-gradient(ellipse at center,red 0%,orange 70%,transparent 100%);
+	position:absolute;
+	top: 6px; left:50%;
+	transform: translateX(-50%);
+	
+	animation: flickerinner 0.25s infinite alternate;
+}
+
+@keyframes flickerinner {
+	from {
+	transform: scale(1) rotate(-1deg);
+	opacity:0.5;
+		
+	}
+	to{
+		transform:scale (1.1) rotate(1deg);
+		opacity:0.8;
+	}
+}
+
+.core-flame{
+	width:3px;
+	height:7px;
+	border-radius: 50% 50% 50% 50%;
+	background: radial-gradient(ellipse at center,blue 0%,deepskyblue 70%,transparent 100%);
+	position:absolute;
+	top: 4px; left:50%;
+	transform: translateX(-50%);
+	
+	animation: flickerinner 0.3s infinite alternate;
+}
+@keyframes dance{
+	0%		{transform: translateX(-50%) translateY(0px);}
+	50%		{transform: translateX(-50%) translateY(-3px);}
+	100%	{transform: translateX(-50%) translateY(0px);}
+	
+}
+
+.wax-drip{
+	position:absolute;
+	width: 12px;
+	height: 25px;
+	background: #fffbe7;
+	border-radius: 50%;
+	left: 5px;
+	top:40px;
+}
+.wax-drip-small{
+	
+	width: 8px;
+	height: 15px;
+	left: 20px;
+	top:70px;
+}
+
+@keyframes flameGlow {
+  0%   { box-shadow: 0 0 20px 8px rgba(255, 200, 50, 0.6); }
+  50%  { box-shadow: 0 0 35px 15px rgba(255, 200, 80, 0.9); }
+  100% { box-shadow: 0 0 20px 8px rgba(255, 200, 50, 0.6); }
+}
