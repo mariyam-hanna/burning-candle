@@ -6,11 +6,18 @@
 <title>Burning-Candle</title>
 </head>
 <body>
+	
 	<h1>Burning Candle</h1>
-	<div class="stage">
+	<select id="candle-size">
+		<option value="small">Small</option>
+		<option value="medium">Medium</option>
+		<option value="large">Large</option>
+	</select>
+	<button id="myButton" onclick="Start()">Start</button>
+	<div class="stage" id="stage">
 		<div class="candle" id="candle">
 			<div class="wick"></div>
-			<div class="wax-drip"></div>
+			<!--<div class="wax-drip"></div>-->
 			<div class="wax-drip-small"></div>
 			<div class="flame" id="flame">
 			<div class="inner-flame" >
